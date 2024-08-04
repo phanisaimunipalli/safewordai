@@ -2,7 +2,7 @@
 
 SafeWord AI is a random passphrase generator powered by Google's latest Gemini-Pro Model. It crafts unique, ultra-secure passphrases from a vast library of 100K+ Hollywood movie lines. This application provides a modern, user-friendly interface to generate and copy secure passphrases effortlessly.
 
-![SafeWord AI Screenshot](https://pplx-res.cloudinary.com/image/upload/v1722791164/user_uploads/giabawvur/Screenshot-2024-08-04-at-10.05.51-AM.jpg)
+![SafeWord AI Screenshot](https://pplx-res.cloudinary.com/image/upload/v1722798854/user_uploads/cmgmjjngr/image.jpg)
 
 ## Features
 
