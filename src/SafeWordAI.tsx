@@ -45,15 +45,15 @@ const SafeWordAI: React.FC = () => {
         model: "gemini-pro",
       });
 
-      const prompt = `Generate a unique, memorable dialouge or line or quote from Hollywood movies or TV Shows released after 2000 year based on a ${genre} genre. 
-        This line should be strictly equal to ${length} words long and have a complexity level of ${complexity} out of 5. 
+      const prompt = `Generate a safe, unique dialouge or line or quote from Hollywood movies or TV Shows released after 2000 year based on a ${genre} genre. 
+        Do not repeat same one again. This line should be strictly ${length} length words and have a complexity level of ${complexity} out of 5. 
         Also provide the movie title, actor who said it, and release year. 
         Format the response as JSON with keys: phrase, movie, actor, year, scene.`;
 
       const result = await model.generateContent(prompt);
       const response = await result.response;
       const text = response.text();
-
+      // console.log("text: ", text);
       // Remove Markdown formatting
       const cleanText = text
         .replace(/```json/, "")
@@ -63,6 +63,7 @@ const SafeWordAI: React.FC = () => {
       // Parse the clean text as JSON
       const generatedContent: Passphrase = JSON.parse(cleanText);
 
+      // console.log("generatedContent: ", generatedContent);
       setPassphrase(generatedContent);
     } catch (err) {
       setError("Error generating passphrase. Please try again.");
