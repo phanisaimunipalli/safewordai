@@ -53,7 +53,7 @@ const SafeWordAI: React.FC = () => {
       const result = await model.generateContent(prompt);
       const response = await result.response;
       const text = response.text();
-      console.log("text: ", text);
+
       // Remove Markdown formatting
       const cleanText = text
         .replace(/```json/, "")
@@ -63,7 +63,6 @@ const SafeWordAI: React.FC = () => {
       // Parse the clean text as JSON
       const generatedContent: Passphrase = JSON.parse(cleanText);
 
-      console.log("generatedContent: ", generatedContent);
       setPassphrase(generatedContent);
     } catch (err) {
       setError("Error generating passphrase. Please try again.");
